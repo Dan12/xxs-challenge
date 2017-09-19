@@ -2,9 +2,9 @@ var passport = require('passport'),
 LocalStrategy = require('passport-local').Strategy,
 user = { // This a hard-coded user
     _id: 1,
-    username: 'john',
+    username: 'CHC',
     email: 'john@doe.com',
-    password: 'password'
+    password: 'CHCL33t'
 };
 
 // Register a login strategy

